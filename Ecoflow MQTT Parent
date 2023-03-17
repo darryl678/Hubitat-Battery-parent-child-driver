@@ -104,20 +104,20 @@ def installed() {
 }
 
 def DeviceModel(model) {
-    state.UnitModel = model
-    log.info state.UnitModel
+    state.UnitModel =  model
+    log.info "model saved as " + model
     if (model == null) log.info"Model of device must defined as parameter"
 }
 
 def DeviceFriendlyName(friend) {
-    log.info friend
+    log.info "freindly name saved as " + friend
     state.FriendName = friend
     if (friend == null) log.info"freindly name not defined - device name set a serial number + model"
 }
 
 def DeviceSerialNumber(serial) {
-    log.info serial
-    state.UnitSerial = serial
+    log.info "serial number saved as " + serial
+    state.UnitSerial =  serial
     if (serial != null) state.model = state.serial
     if (serial == null) log.info "Serial number of device must defined as parameter"
 }
